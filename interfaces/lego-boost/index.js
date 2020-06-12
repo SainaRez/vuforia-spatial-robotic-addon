@@ -200,6 +200,7 @@ function startHardwareInterface() {
     server.addNode(objectName, "kineticAR", "kineticNode2", "storeData");     // Node for the data path. Follow Checkpoints
     server.addNode(objectName, "kineticAR", "kineticNode3", "storeData");     // Node for receiving AR status
     server.addNode(objectName, "kineticAR", "kineticNode4", "storeData");     // Node for cleaning the path
+    server.addNode(objectName, "checkpoint_tool", )
     
     server.addPublicDataListener(objectName, "kineticAR", "kineticNode3","ARstatus",function (data){
 
