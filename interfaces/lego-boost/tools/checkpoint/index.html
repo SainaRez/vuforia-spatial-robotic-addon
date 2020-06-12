@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 1. these libraries will be injected by the Edge Server -->
+    <script src="objectDefaultFiles/object.js"></script>
+    <script src="objectDefaultFiles/pep.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>checkpoint</title>
+    <style>
+        /* Fill the page with a circle */
+        #container {
+            /* (290 + border) will fit inside body size */
+            width: 200px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<!-- 2. Set the width and height of your tool here -->
+<body style="width: 210px; height: 210px">
+<div id="container"></div>
+
+<script>
+    // 3. Try to load the SpatialInterface APIs.
+    let spatialInterface = new SpatialInterface();
+
+    // 4. When we tap on the container, change the color
+    let container = document.getElementById('container');
+    container.addEventListener('pointerup', function() {
+        let newHue = Math.round(Math.random() * 255);
+        setColor(newHue);
+    });
+
+    function setColor(hue) {
+        container.style.backgroundColor = 'hsl(' + hue + ', 90%, 70%)';
+    }
+</script>
+</body>
+</html>
